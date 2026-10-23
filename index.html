@@ -3,8 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Data Handling Quest</title>
-  <!-- Links your style.css stylesheet -->
+  <title>Simple Equations Quest</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -13,18 +12,19 @@
     <!-- 1. LOADING SCREEN -->
     <div id="loading-screen" class="screen active">
       <div class="loader-content">
-        <h1>Data Handling Quest</h1>
+        <h1>Simple Equations Quest</h1>
         <div class="spinner"></div>
         <p>Loading project modules...</p>
       </div>
     </div>
 
-    <!-- 2. LOGIN / NAME SCREEN -->
+    <!-- 2. LOGIN / NAME SCREEN WITH SECURITY PIN -->
     <div id="login-screen" class="screen">
       <div class="card">
-        <h2>Data Handling</h2>
-        <p>Enter your details to start the evaluation.</p>
+        <h2>Simple Equations</h2>
+        <p>Enter your details and access code to start the evaluation.</p>
         <input type="text" id="student-name" placeholder="Enter Student Name" autocomplete="off">
+        <input type="password" id="security-pin" placeholder="Enter 5-Digit Quiz PIN" maxlength="5" autocomplete="off">
         <button id="start-btn" disabled>Start Quiz</button>
       </div>
     </div>
@@ -33,7 +33,17 @@
     <div id="game-screen" class="screen">
       <div class="game-header">
         <span id="display-student-name">Student: </span>
-        <span id="progress">Question 1 of 20</span>
+        <span id="progress">Question 1 of 10</span>
+      </div>
+      
+      <!-- New Animated Progress Bar Container -->
+      <div class="progress-bar-container">
+        <div id="progress-bar-filladiv>
+      </div>
+
+      <!-- New Visual Countdown Timer Display -->
+      <div class="timer-container">
+        ⏱️ Time Left: <span id="timer-countdown">20</span>s
       </div>
       
       <div class="card">
@@ -48,19 +58,27 @@
       <div class="card summary-card">
         <h2>Evaluation Complete!</h2>
         <div class="score-badge">
-          <span id="final-score">0</span> / <span id="total-score">20</span>
+          <span id="final-score">0</span> / <span id="total-score">10</span>
         </div>
         <div class="report-details">
           <p><strong>Project Code:</strong> bsbScore-2026</p>
           <p><strong>Student Name:</strong> <span id="report-name">-</span></p>
           <p><strong>Performance:</strong> <span id="performance-feedback">-</span></p>
         </div>
+
+        <!-- New Leaderboard Panel Display -->
+        <div class="leaderboard-box">
+          <h3>🏆 Top High Scores</h3>
+          <ol id="leaderboard-list">
+            <li>Loading records...</li>
+          </ol>
+        </div>
+
         <button id="restart-btn">Restart Assessment</button>
       </div>
     </div>
   </div>
 
-  <!-- Links your Script.js file -->
   <script src="Script.js"></script>
 </body>
 </html>
