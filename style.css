@@ -78,10 +78,10 @@ body {
 }
 
 /* Inputs & Interactive Elements */
-input[type="text"] {
+input[type="text"], input[type="password"] {
   width: 100%;
   padding: 14px;
-  margin: 20px 0;
+  margin: 12px 0;
   background: #0b0c10;
   border: 2px solid #c5c6c7;
   border-radius: 6px;
@@ -91,7 +91,7 @@ input[type="text"] {
   transition: border-color 0.3s;
 }
 
-input[type="text"]:focus {
+input[type="text"]:focus, input[type="password"]:focus {
   outline: none;
   border-color: #45f3ff;
 }
@@ -107,6 +107,7 @@ button {
   cursor: pointer;
   transition: all 0.2s ease;
   width: 100%;
+  margin-top: 10px;
 }
 
 button:hover:not(:disabled) {
@@ -126,9 +127,37 @@ button:disabled {
   width: 100%;
   display: flex;
   justify-content: space-between;
-  margin-bottom: 15px;
+  margin-bottom: 5px;
   color: #66fcf1;
   font-weight: bold;
+}
+
+/* Progress Bar Upgrades */
+.progress-bar-container {
+  width: 100%;
+  height: 8px;
+  background-color: #1f2833;
+  border-radius: 4px;
+  margin-bottom: 15px;
+  overflow: hidden;
+  border: 1px solid #4f5d73;
+}
+
+#progress-bar-fill {
+  width: 0%;
+  height: 100%;
+  background: linear-gradient(90deg, #45f3ff, #66fcf1);
+  transition: width 0.4s ease;
+  box-shadow: 0 0 8px #45f3ff;
+}
+
+/* Timer Upgrades */
+.timer-container {
+  color: #ff4757;
+  font-weight: bold;
+  margin-bottom: 15px;
+  font-size: 1.1rem;
+  text-shadow: 0 0 5px rgba(255, 71, 87, 0.3);
 }
 
 .data-box {
@@ -162,7 +191,6 @@ button:disabled {
   background: #34495e;
 }
 
-/* Instant Feedback Structural Adjustments */
 .option-btn.correct-choice {
   background-color: #2e7d32 !important;
   border-color: #4caf50 !important;
@@ -175,7 +203,6 @@ button:disabled {
   color: #ffffff !important;
 }
 
-/* Score counter element styling */
 #score-counter {
   color: #45f3ff;
   font-size: 1rem;
@@ -185,7 +212,7 @@ button:disabled {
   border: 1px dashed #45f3ff;
 }
 
-/* Summary / Report Card */
+/* Summary / Report Card & Leaderboard Layout */
 .summary-card h2 {
   color: #66fcf1;
   margin-bottom: 15px;
@@ -200,15 +227,42 @@ button:disabled {
 
 .report-details {
   background: #0b0c10;
-  padding: 20px;
+  padding: 15px;
   border-radius: 6px;
   text-align: left;
-  margin-bottom: 25px;
+  margin-bottom: 15px;
   line-height: 1.6;
 }
 
 .report-details strong {
   color: #66fcf1;
+}
+
+.leaderboard-box {
+  background: #0b0c10;
+  border: 1px dashed #66fcf1;
+  border-radius: 6px;
+  padding: 15px;
+  margin-bottom: 25px;
+  text-align: left;
+}
+
+.leaderboard-box h3 {
+  color: #45f3ff;
+  margin-bottom: 10px;
+  font-size: 1.1rem;
+  border-bottom: 1px solid #1f2833;
+  padding-bottom: 5px;
+}
+
+.leaderboard-box ol {
+  padding-left: 20px;
+}
+
+.leaderboard-box li {
+  margin: 5px 0;
+  font-family: monospace;
+  font-size: 0.95rem;
 }
 
 /* Animations */
