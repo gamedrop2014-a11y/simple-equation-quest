@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Data Handling Quest</title>
+  <!-- Links your style.css stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="app-container">
+    <!-- 1. LOADING SCREEN -->
+    <div id="loading-screen" class="screen active">
+      <div class="loader-content">
+        <h1>Data Handling Quest</h1>
+        <div class="spinner"></div>
+        <p>Loading project modules...</p>
+      </div>
+    </div>
+
+    <!-- 2. LOGIN / NAME SCREEN -->
+    <div id="login-screen" class="screen">
+      <div class="card">
+        <h2>Data Handling</h2>
+        <p>Enter your details to start the evaluation.</p>
+        <input type="text" id="student-name" placeholder="Enter Student Name" autocomplete="off">
+        <button id="start-btn" disabled>Start Quiz</button>
+      </div>
+    </div>
+
+    <!-- 3. GAME / QUIZ SCREEN -->
+    <div id="game-screen" class="screen">
+      <div class="game-header">
+        <span id="display-student-name">Student: </span>
+        <span id="progress">Question 1 of 20</span>
+      </div>
+      
+      <div class="card">
+        <div id="data-visual" class="data-box"></div>
+        <h3 id="question-text">Question text goes here?</h3>
+        <div id="options-container" class="options-grid"></div>
+      </div>
+    </div>
+
+    <!-- 4. FINAL SCORE SCREEN -->
+    <div id="score-screen" class="screen">
+      <div class="card summary-card">
+        <h2>Evaluation Complete!</h2>
+        <div class="score-badge">
+          <span id="final-score">0</span> / <span id="total-score">20</span>
+        </div>
+        <div class="report-details">
+          <p><strong>Project Code:</strong> bsbScore-2026</p>
+          <p><strong>Student Name:</strong> <span id="report-name">-</span></p>
+          <p><strong>Performance:</strong> <span id="performance-feedback">-</span></p>
+        </div>
+        <button id="restart-btn">Restart Assessment</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Links your Script.js file -->
+  <script src="Script.js"></script>
+</body>
+</html>
